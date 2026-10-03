@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>10efb42c-5d9a-4a33-afd8-9db372a5c91e</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ChiselModLoader.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CMLGlobals.cs" />
+    <Compile Include="..\ChiselModLoader.Shared\CMLCFG.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IniFileReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IniFileWriter.cs" />
+  </ItemGroup>
+</Project>

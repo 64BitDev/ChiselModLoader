@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ChiselModLoader.Runtime\ChiselModLoader.Runtime.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="Engine">
+			<HintPath>$(SolutionDir)game\Engine.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="MonoGame.Framework">
+			<HintPath>$(SolutionDir)game\MonoGame.Framework.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<MakeDir Directories="$(SolutionDir)game\CML\Mods\" />
+		<Exec Command="xcopy &quot;$(TargetDir)ExampleMod.dll&quot; &quot;$(SolutionDir)game\CML\Mods\&quot; /Y" />
+		<Exec Command="xcopy &quot;$(TargetDir)ExampleMod.pdb&quot; &quot;$(SolutionDir)game\CML\Mods\&quot; /Y" />
+	</Target>
+</Project>

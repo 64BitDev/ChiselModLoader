@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	 <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <Import Project="..\ChiselModLoader.Shared\ChiselModLoader.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+  </ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<MakeDir Directories="$(SolutionDir)game\" />
+		<MakeDir Directories="$(SolutionDir)game\CML\CMLLibs\" />
+		<Exec Command="xcopy &quot;$(TargetDir)ChiselModLoader.Runtime.dll&quot; &quot;$(SolutionDir)game\&quot; /Y" />
+		<Exec Command="xcopy &quot;$(TargetDir)ChiselModLoader.Runtime.pdb&quot; &quot;$(SolutionDir)game\&quot; /Y" />
+		<Exec Command="xcopy &quot;$(TargetDir)0Harmony.dll&quot; &quot;$(SolutionDir)game\CML\CMLLibs\&quot; /Y" />
+</Target>
+</Project>

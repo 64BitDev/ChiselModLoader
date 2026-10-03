@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    },
+    "CML_Injector_Debug": {
+      "commandName": "Executable",
+      "executablePath": "C:\\gitrepos\\ChiselModLoader\\Game\\ChiselModLoader.Injector.App.exe",
+      "workingDirectory": "C:\\gitrepos\\ChiselModLoader\\Game"
+    }
+  }
+}

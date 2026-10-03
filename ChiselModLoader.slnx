@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="license.txt" />
+    <File Path="readme.md" />
+  </Folder>
+  <Project Path="ChiselModLoader.Injector.App/ChiselModLoader.Injector.App.csproj" />
+  <Project Path="ChiselModLoader.Runtime/ChiselModLoader.Runtime.csproj" />
+  <Project Path="ChiselModLoader.Shared/ChiselModLoader.Shared.shproj" />
+  <Project Path="ExampleMod/ExampleMod.csproj" Id="31159812-cf64-415b-ac50-3591e46502f7" />
+</Solution>

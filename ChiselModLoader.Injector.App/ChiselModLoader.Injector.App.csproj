@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<!-- Create target directories -->
+		<MakeDir Directories="$(SolutionDir)game\" />
+		<MakeDir Directories="$(SolutionDir)game\CML\CMLLibs\" />
+		<MakeDir Directories="$(SolutionDir)game\CML\Mods\" />
+
+		<!-- Copy Injector/App files and dependencies to /game/ -->
+		<Exec Command="xcopy &quot;$(TargetDir)*.*&quot; &quot;$(SolutionDir)game\&quot; /Y /E /I" />
+	</Target>
+  <Import Project="..\ChiselModLoader.Shared\ChiselModLoader.Shared.projitems" Label="Shared" />
+	<ItemGroup>
+		<ProjectReference Include="..\ChiselModLoader.Runtime\ChiselModLoader.Runtime.csproj">
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+			<OutputItemType>None</OutputItemType>
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</ProjectReference>
+	</ItemGroup>
+</Project>
