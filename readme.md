@@ -26,6 +26,8 @@ To run CML, you must set up your game files using one of the following methods:
 - **Option A (Local Build Setup):** Copy your Chisel game files into the `/Game` directory located in the solution root.
 - **Option B (Direct Game Installation):** Copy the contents of the compiled CML directory directly into your existing Chisel game installation folder.
 
+> **Note:** Always launch the game using `ChiselModLoader.Injector.App.exe` instead of the original game executable to ensure mods and engine patches are loaded.
+
 ---
 
 ## Debugging
@@ -41,7 +43,7 @@ To debug CML or mods directly within Visual Studio:
 
 ## Installation & Folder Structure
 
-When compiled and placed in your game directory, CML expects the following folder structure:
+When compiled and placed in your game directory, CML expects the following folder structure (launch the game via `ChiselModLoader.Injector.App.exe`):
 
 ```text
 Game/
@@ -60,7 +62,7 @@ Game/
 
 ## Creating Mods
 
-To create a mod for CML, reference `ChiselModLoader.Runtime.dll` and define a class inheriting from `CMLMod` marked with the `CMLPluginInfo` attribute. Beyond that, writing a mod works just like writing code inside the engine itself,including creating custom entities:
+To create a mod for CML, reference `ChiselModLoader.Runtime.dll` and define a class inheriting from `CMLMod` marked with the `CMLPluginInfo` attribute. Beyond that, writing a mod works just like writing code inside the engine itself, including creating custom entities:
 
 ```csharp
 using ChiselModLoader.Runtime;
